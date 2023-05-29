@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>FSharp.Data.Csv.Core</name></assembly>
+<members>
+<member name="M:FSharp.Data.CsvFile.TryGetColumnIndex(System.String)">
+<summary>
+ Returns the index of the column with the given name, or returns None if no column is found
+</summary>
+</member>
+<member name="M:FSharp.Data.CsvFile.Parse(System.String,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Char},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<summary>
+ Parses the specified CSV content
+</summary>
+</member>
+<member name="M:FSharp.Data.CsvFile.Load(System.String,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Char},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Int32},Microsoft.FSharp.Core.FSharpOption{System.Text.Encoding})">
+<summary>
+ Loads CSV from the specified uri
+</summary>
+</member>
+<member name="M:FSharp.Data.CsvFile.Load(System.IO.TextReader,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Char},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<summary>
+ Loads CSV from the specified reader
+</summary>
+</member>
+<member name="M:FSharp.Data.CsvFile.Load(System.IO.Stream,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Char},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<summary>
+ Loads CSV from the specified stream
+</summary>
+</member>
+<member name="M:FSharp.Data.CsvFile.GetColumnIndex(System.String)">
+<summary>
+ Returns the index of the column with the given name
+</summary>
+</member>
+<member name="M:FSharp.Data.CsvFile.AsyncLoad(System.String,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Char},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Int32},Microsoft.FSharp.Core.FSharpOption{System.Text.Encoding})">
+<summary>
+ Loads CSV from the specified uri asynchronously
+</summary>
+</member>
+<member name="T:FSharp.Data.CsvFile">
+ <summary>
+ Represents a CSV file. The lines are read on demand from <c>reader</c>.
+ Columns are delimited by one of the chars passed by <c>separators</c> (defaults to just <c>,</c>), and
+ to escape the separator chars, the <c>quote</c> character will be used (defaults to <c>"</c>).
+ If <c>hasHeaders</c> is true (the default), the first line read by <c>reader</c> will not be considered part of data.
+ If <c>ignoreErrors</c> is true (the default is false), rows with a different number of columns from the header row
+ (or the first row if headers are not present) will be ignored.
+ The first <c>skipRows</c> lines will be skipped.
+ </summary>
+</member>
+<member name="P:FSharp.Data.CsvRow.Item(System.String)">
+<summary>
+ Gets a column by name
+</summary>
+</member>
+<member name="P:FSharp.Data.CsvRow.Item(System.Int32)">
+<summary>
+ Gets a column by index
+</summary>
+</member>
+<member name="P:FSharp.Data.CsvRow.Columns">
+<summary>
+ The columns of the row
+</summary>
+</member>
+<member name="M:FSharp.Data.CsvRow.GetColumn(System.String)">
+<summary>
+ Gets a column by name
+</summary>
+</member>
+<member name="M:FSharp.Data.CsvRow.GetColumn(System.Int32)">
+<summary>
+ Gets a column by index
+</summary>
+</member>
+<member name="T:FSharp.Data.StringExtensions">
+<summary>
+ Extension methods with conversions from strings to other types
+</summary>
+</member>
+<member name="M:FSharp.Data.CsvExtensionsModule.op_Dynamic(FSharp.Data.CsvRow,System.String)">
+<summary>
+ Get the value of a column by name from a CSV row
+</summary>
+</member>
+<member name="T:FSharp.Data.CsvExtensionsModule">
+<summary>
+ Provides the dynamic operator for getting column values by name from CSV rows
+</summary>
+</member>
+<member name="P:FSharp.Data.Runtime.CsvFile`1.Separators">
+<summary>
+ The character(s) used as column separator(s)
+</summary>
+</member>
+<member name="P:FSharp.Data.Runtime.CsvFile`1.Rows">
+<summary>
+ The rows with data
+</summary>
+</member>
+<member name="P:FSharp.Data.Runtime.CsvFile`1.Quote">
+<summary>
+ The quotation mark use for surrounding values containing separator chars
+</summary>
+</member>
+<member name="P:FSharp.Data.Runtime.CsvFile`1.NumberOfColumns">
+<summary>
+ The number of columns
+</summary>
+</member>
+<member name="P:FSharp.Data.Runtime.CsvFile`1.Headers">
+<summary>
+ The names of the columns
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.CsvFile`1.Truncate(System.Int32)">
+<summary>
+ Returns a csv that when enumerated returns at most N rows.
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.CsvFile`1.TakeWhile(System.Func{`0,System.Boolean})">
+<summary>
+ Returns a csv that, when iterated, yields rowswhile the given predicate
+ returns &lt;c&gt;true&lt;/c&gt;, and then returns no further rows.
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.CsvFile`1.Take(System.Int32)">
+<summary>
+ Returns a new csv with only the first N rows of the underlying csv.
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.CsvFile`1.SkipWhile(System.Func{`0,System.Boolean})">
+<summary>
+ Returns a csv that, when iterated, skips rows while the given predicate returns
+ &lt;c&gt;true&lt;/c&gt;, and then yields the remaining rows.
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.CsvFile`1.Skip(System.Int32)">
+<summary>
+ Returns a csv that skips N rows and then yields the remaining rows.
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.CsvFile`1.SaveToString(Microsoft.FSharp.Core.FSharpOption{System.Char},Microsoft.FSharp.Core.FSharpOption{System.Char})">
+<summary>
+ Saves CSV to a string
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.CsvFile`1.Save(System.String,Microsoft.FSharp.Core.FSharpOption{System.Char},Microsoft.FSharp.Core.FSharpOption{System.Char})">
+<summary>
+ Saves CSV to the specified file
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.CsvFile`1.Save(System.IO.Stream,Microsoft.FSharp.Core.FSharpOption{System.Char},Microsoft.FSharp.Core.FSharpOption{System.Char})">
+<summary>
+ Saves CSV to the specified stream
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.CsvFile`1.Save(System.IO.TextWriter,Microsoft.FSharp.Core.FSharpOption{System.Char},Microsoft.FSharp.Core.FSharpOption{System.Char})">
+<summary>
+ Saves CSV to the specified writer
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.CsvFile`1.ParseRows(System.String,System.Func{System.Object,System.String[],`0},System.String,System.Char,System.Boolean)">
+ <exclude />
+</member>
+<member name="M:FSharp.Data.Runtime.CsvFile`1.Map(System.Func{`0,`0})">
+<summary>
+ Returns a new csv where every row has been transformed by the provided mapping function.
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.CsvFile`1.Filter(System.Func{`0,System.Boolean})">
+<summary>
+ Returns a new csv containing only the rows for which the given predicate returns &quot;true&quot;.
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.CsvFile`1.CreateEmpty(System.Func{`0,System.String[]},System.Collections.Generic.IEnumerable{`0},Microsoft.FSharp.Core.FSharpOption{System.String[]},System.Int32,System.String,System.Char)">
+ <exclude />
+</member>
+<member name="M:FSharp.Data.Runtime.CsvFile`1.Create(System.Func{System.Object,System.String[],`0},System.Func{`0,System.String[]},System.IO.TextReader,System.String,System.Char,System.Boolean,System.Boolean,System.Int32,System.Boolean)">
+ <exclude />
+</member>
+<member name="M:FSharp.Data.Runtime.CsvFile`1.Cache">
+<summary>
+ Returns a new csv with the same rows as the original but which guarantees
+ that each row will be only be read and parsed from the input at most once.
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.CsvFile`1.Append(System.Collections.Generic.IEnumerable{`0})">
+<summary>
+ Returns a csv with the same rows as the original plus the provided rows appended
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.CsvFile`1.#ctor(System.Func{System.Object,System.String[],`0},System.Func{`0,System.String[]},System.Func{System.IO.TextReader},System.String,System.Char,System.Boolean,System.Boolean,System.Int32)">
+ <exclude />
+</member>
+<member name="T:FSharp.Data.Runtime.CsvFile`1">
+ <exclude />
+</member>
+<member name="T:FSharp.Data.Runtime.CsvHelpers.ReentrantEnumerable`1">
+<summary>
+ An enumerable that will return elements from the &apos;firstSeq&apos; first time it
+ is accessed and then will call &apos;nextSeq&apos; each time for all future GetEnumerator calls
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.CsvReader.readCsvFile(System.IO.TextReader,System.String,System.Char)">
+<summary>
+ Lazily reads the specified CSV file using the specified separators
+ (Handles most of the RFC 4180 - most notably quoted values and also
+ quoted newline characters in columns)
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.CsvInference.CsvFile.InferColumnTypes(FSharp.Data.CsvFile,System.Int32,System.String[],FSharp.Data.Runtime.StructuralInference.InferenceMode',System.Globalization.CultureInfo,System.String,System.Boolean,System.Boolean,FSharp.Data.Runtime.StructuralInference.IUnitsOfMeasureProvider)">
+ <summary>
+ Infers the types of the columns of a CSV file
+ </summary>
+ <param name="inferRows"> - Number of rows to use for inference. If this is zero, all rows are used</param>
+ <param name="missingValues"> - The set of strings recognized as missing values</param>
+ <param name="cultureInfo"> - The culture used for parsing numbers and dates</param>
+ <param name="schema"> - Optional column types, in a comma separated list. Valid types are "int", "int64", "bool", "float", "decimal", "date", "timespan", "guid", "string", "int?", "int64?", "bool?", "float?", "decimal?", "date?", "guid?", "int option", "int64 option", "bool option", "float option", "decimal option", "date option", "guid option" and "string option". You can also specify a unit and the name of the column like this: Name (type&lt;unit&gt;). You can also override only the name. If you don't want to specify all the columns, you can specify by name like this: 'ColumnName=type'</param>
+ <param name="assumeMissingValues"> - Assumes all columns can have missing values</param>
+ <param name="preferOptionals"> - when set to true, inference will prefer to use the option type instead of nullable types, double.NaN or "" for missing values</param>
+ <param name="unitsOfMeasureProvider"> - optional function to resolve Units of Measure</param>
+</member>
+<member name="M:FSharp.Data.Runtime.CsvInference.getFields(System.Boolean,FSharp.Data.Runtime.StructuralTypes.InferedType,Microsoft.FSharp.Core.FSharpOption{FSharp.Data.Runtime.StructuralTypes.PrimitiveInferedProperty}[])">
+<summary>
+ Generates the fields for a CSV row. The CSV provider should be
+ numerical-friendly, so we do a few simple adjustments.
+ When preferOptionals is false:
+
+  - Optional fields of type &apos;int&apos; are generated as Nullable&lt;int&gt;
+  - Optional fields of type &apos;int64&apos; are generated as Nullable&lt;int64&gt;
+  - Optional fields of type &apos;float&apos; are just floats (and null becomes NaN)
+  - Optional fields of type &apos;decimal&apos; are generated as floats too
+  - Optional fields of any other non-nullable T (bool/date/timespan/guid) become option&lt;T&gt;
+  - All other types are simply strings.
+
+ When preferOptionals is true:
+
+  - All optional fields of type &apos;T&apos; for any type become option&lt;T&gt;, including strings and floats
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.CsvInference.inferType``1(System.Tuple{System.String,Microsoft.FSharp.Core.FSharpOption{System.Type}}[],Microsoft.FSharp.Core.FSharpOption{``0}[],System.Collections.Generic.IEnumerable{System.String[]},System.Int32,System.String[],FSharp.Data.Runtime.StructuralInference.InferenceMode',System.Globalization.CultureInfo,System.Boolean,System.Boolean,FSharp.Data.Runtime.StructuralInference.IUnitsOfMeasureProvider)">
+<summary>
+ Infers the type of a CSV file using the specified number of rows
+ (This handles units in the same way as the original MiniCSV provider)
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.CsvInference.parseSchemaItem(FSharp.Data.Runtime.StructuralInference.IUnitsOfMeasureProvider,System.String,System.Boolean)">
+<summary>
+ Parse schema specification for column. This can either be a name
+ with type or just type: name (typeInfo)|typeInfo.
+ If forSchemaOverride is set to true, only Full or Name is returned
+ (if we succeed we override the inferred schema, otherwise, we just
+ override the header name)
+</summary>
+</member>
+<member name="P:FSharp.Data.Runtime.CsvInference.nameToTypeForCsv">
+<summary>
+ This table specifies the mapping from (the names that users can use) to (the types used).
+ The table here for the CsvProvider extends the mapping used for inline schemas by adding nullable and optionals.
+</summary>
+</member>
+<member name="T:FSharp.Data.Runtime.CsvInference">
+<summary>
+ Structural inference for CSV
+</summary>
+</member>
+</members>
+</doc>

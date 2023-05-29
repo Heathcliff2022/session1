@@ -1,0 +1,1067 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>FSharp.Data.Http</name></assembly>
+<members>
+<member name="M:FSharp.Data.Http.RequestString(System.String,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.String,System.String}}},Microsoft.FSharp.Core.FSharpOption{System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.String}}},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{FSharp.Data.HttpRequestBody},Microsoft.FSharp.Core.FSharpOption{System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.String}}},Microsoft.FSharp.Core.FSharpOption{System.Net.CookieContainer},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Core.FSharpFunc{System.Net.HttpWebRequest,System.Net.HttpWebRequest}},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<summary>
+ Download an HTTP web resource from the specified URL synchronously
+ (allows specifying query string parameters and HTTP headers including
+ headers that have to be handled specially - such as Accept, Content-Type &amp; Referer)
+ The body for POST request can be specified either as text or as a list of parameters
+ that will be encoded, and the method will automatically be set if not specified
+</summary>
+</member>
+<member name="M:FSharp.Data.Http.RequestStream(System.String,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.String,System.String}}},Microsoft.FSharp.Core.FSharpOption{System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.String}}},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{FSharp.Data.HttpRequestBody},Microsoft.FSharp.Core.FSharpOption{System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.String}}},Microsoft.FSharp.Core.FSharpOption{System.Net.CookieContainer},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Core.FSharpFunc{System.Net.HttpWebRequest,System.Net.HttpWebRequest}},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<summary>
+ Download an HTTP web resource from the specified URL synchronously
+ (allows specifying query string parameters and HTTP headers including
+ headers that have to be handled specially - such as Accept, Content-Type &amp; Referer)
+ The body for POST request can be specified either as text or as a list of parameters
+ that will be encoded, and the method will automatically be set if not specified
+</summary>
+</member>
+<member name="M:FSharp.Data.Http.Request(System.String,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.String,System.String}}},Microsoft.FSharp.Core.FSharpOption{System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.String}}},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{FSharp.Data.HttpRequestBody},Microsoft.FSharp.Core.FSharpOption{System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.String}}},Microsoft.FSharp.Core.FSharpOption{System.Net.CookieContainer},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Core.FSharpFunc{System.Net.HttpWebRequest,System.Net.HttpWebRequest}},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<summary>
+ Download an HTTP web resource from the specified URL synchronously
+ (allows specifying query string parameters and HTTP headers including
+ headers that have to be handled specially - such as Accept, Content-Type &amp; Referer)
+ The body for POST request can be specified either as text or as a list of parameters
+ that will be encoded, and the method will automatically be set if not specified
+</summary>
+</member>
+<member name="M:FSharp.Data.Http.EncodeFormData(System.String)">
+<summary>
+ Correctly encodes large form data values.
+ See https://blogs.msdn.microsoft.com/yangxind/2006/11/08/dont-use-net-system-uri-unescapedatastring-in-url-decoding/
+ and https://msdn.microsoft.com/en-us/library/system.uri.escapedatastring(v=vs.110).aspx
+</summary>
+</member>
+<member name="M:FSharp.Data.Http.AsyncRequestString(System.String,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.String,System.String}}},Microsoft.FSharp.Core.FSharpOption{System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.String}}},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{FSharp.Data.HttpRequestBody},Microsoft.FSharp.Core.FSharpOption{System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.String}}},Microsoft.FSharp.Core.FSharpOption{System.Net.CookieContainer},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Core.FSharpFunc{System.Net.HttpWebRequest,System.Net.HttpWebRequest}},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<summary>
+ Download an HTTP web resource from the specified URL asynchronously
+ (allows specifying query string parameters and HTTP headers including
+ headers that have to be handled specially - such as Accept, Content-Type &amp; Referer)
+ The body for POST request can be specified either as text or as a list of parameters
+ that will be encoded, and the method will automatically be set if not specified
+</summary>
+</member>
+<member name="M:FSharp.Data.Http.AsyncRequestStream(System.String,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.String,System.String}}},Microsoft.FSharp.Core.FSharpOption{System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.String}}},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{FSharp.Data.HttpRequestBody},Microsoft.FSharp.Core.FSharpOption{System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.String}}},Microsoft.FSharp.Core.FSharpOption{System.Net.CookieContainer},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Core.FSharpFunc{System.Net.HttpWebRequest,System.Net.HttpWebRequest}},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<summary>
+ Download an HTTP web resource from the specified URL asynchronously
+ (allows specifying query string parameters and HTTP headers including
+ headers that have to be handled specially - such as Accept, Content-Type &amp; Referer)
+ The body for POST request can be specified either as text or as a list of parameters
+ that will be encoded, and the method will automatically be set if not specified
+</summary>
+</member>
+<member name="M:FSharp.Data.Http.AsyncRequest(System.String,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.String,System.String}}},Microsoft.FSharp.Core.FSharpOption{System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.String}}},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{FSharp.Data.HttpRequestBody},Microsoft.FSharp.Core.FSharpOption{System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.String}}},Microsoft.FSharp.Core.FSharpOption{System.Net.CookieContainer},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Core.FSharpFunc{System.Net.HttpWebRequest,System.Net.HttpWebRequest}},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<summary>
+ Download an HTTP web resource from the specified URL asynchronously
+ (allows specifying query string parameters and HTTP headers including
+ headers that have to be handled specially - such as Accept, Content-Type &amp; Referer)
+ The body for POST request can be specified either as text or as a list of parameters
+ that will be encoded, and the method will automatically be set if not specified
+</summary>
+</member>
+<member name="M:FSharp.Data.Http.AppendQueryToUrl(System.String,Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.String,System.String}})">
+<summary>
+ Appends the query parameters to the url, taking care of proper escaping
+</summary>
+</member>
+<member name="T:FSharp.Data.Http">
+<summary>
+ Utilities for working with network via HTTP. Includes methods for downloading
+ resources with specified headers, query parameters and HTTP body
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseWithStream.Headers">
+<summary>
+ If the same header is present multiple times, the values will be concatenated with comma as the separator
+</summary>
+</member>
+<member name="T:FSharp.Data.HttpResponseWithStream">
+<summary>
+ The response returned by an HTTP request with direct access to the response stream
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponse.Headers">
+<summary>
+ If the same header is present multiple times, the values will be concatenated with comma as the separator
+</summary>
+</member>
+<member name="T:FSharp.Data.HttpResponse">
+<summary>
+ The response returned by an HTTP request
+</summary>
+</member>
+<member name="T:FSharp.Data.HttpResponseBody">
+<summary>
+ The response body returned by an HTTP request
+</summary>
+</member>
+<member name="T:FSharp.Data.HttpRequestBody.Multipart">
+<summary>
+ A sequence of formParamName * fileName * fileContent groups
+</summary>
+</member>
+<member name="T:FSharp.Data.HttpRequestBody">
+<summary>
+ The body to send in an HTTP request
+</summary>
+</member>
+<member name="T:FSharp.Data.HttpHelpers.CombinedStream">
+<summary>
+ A stream class that abstracts away writing the contents of a series of other streams, closing them as they are consumed.  Non-seekable, reading-only stream.
+</summary>
+</member>
+<member name="T:FSharp.Data.HttpHelpers.WebResponse">
+<summary>
+ Decorator for System.Net.WebResponse class
+ used to make response stream seekable
+ in order to preserve it in the new response
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpHelpers.writeMultipart(System.String,System.Collections.Generic.IEnumerable{FSharp.Data.MultipartItem},System.Text.Encoding)">
+<summary>
+     1) compute length (parts.Length * boundary_size) + Sum(parts.Streams.Length)
+     2) foreach part (formFieldName, fileName, fileContent)
+         a) write initial boundary marker
+         b) write section headers (start with content-type/Content-Disposition based on the extension of the second parameter, plus name and fileName)
+         c) write newline
+         d) write section data
+     3) write trailing boundary
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpHelpers.asyncRead(System.IO.Stream)">
+<summary>
+ consumes a stream asynchronously until the end
+ and returns a memory stream with the full content
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpEncodings.ResponseDefaultEncoding">
+<summary>
+ ISO-8859-1
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpEncodings.PostDefaultEncoding">
+<summary>
+ ISO-8859-1
+</summary>
+</member>
+<member name="T:FSharp.Data.HttpEncodings">
+<summary>
+ Constants for common HTTP encodings
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpContentTypes.Multipart(System.String)">
+<summary>
+ multipart/form-data
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpContentTypes.JsonRpc">
+<summary>
+ application/json-rpc
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpContentTypes.Csv">
+<summary>
+ text/csv
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpContentTypes.Soap">
+<summary>
+ application/soap+xml
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpContentTypes.XHtml">
+<summary>
+ application/xhtml+xml
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpContentTypes.Html">
+<summary>
+ text/html
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpContentTypes.Rdf">
+<summary>
+ application/rdf+xml
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpContentTypes.Atom">
+<summary>
+ application/atom+xml
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpContentTypes.Rss">
+<summary>
+ application/rss+xml
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpContentTypes.Xml">
+<summary>
+ application/xml
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpContentTypes.JavaScript">
+<summary>
+ application/javascript
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpContentTypes.Json">
+<summary>
+ application/json
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpContentTypes.FormValues">
+<summary>
+ application/x-www-form-urlencoded
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpContentTypes.GZip">
+<summary>
+ application/octet-stream
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpContentTypes.Zip">
+<summary>
+ application/octet-stream
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpContentTypes.Binary">
+<summary>
+ application/octet-stream
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpContentTypes.Text">
+<summary>
+ plain/text
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpContentTypes.Any">
+<summary>
+ */*
+</summary>
+</member>
+<member name="T:FSharp.Data.HttpContentTypes">
+<summary>
+ Constants for common HTTP content types
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.NetworkAuthenticationRequired">
+<summary>
+ The client needs to authenticate to gain network access.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.NotExtended">
+<summary>
+ Further extensions to the request are required for the server to fulfil it.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.LoopDetected">
+<summary>
+ The server detected an infinite loop while processing the request.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.InsufficientStorage">
+<summary>
+ The server is unable to store the representation needed to complete the request.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.VariantAlsoNegotiates">
+<summary>
+ Transparent content negotiation for the request results in a circular reference.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.HTTPVersionNotSupported">
+<summary>
+ The server does not support the HTTP protocol version used in the request.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.GatewayTimeout">
+<summary>
+ The server was acting as a gateway or proxy and did not receive a timely response from the upstream server.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.ServiceUnavailable">
+<summary>
+ The server is currently unavailable (because it is overloaded or down for maintenance).
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.BadGateway">
+<summary>
+ The server was acting as a gateway or proxy and received an invalid response from the upstream server.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.NotImplemented">
+<summary>
+ The server either does not recognize the request method, or it lacks the ability to fulfil the request.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.InternalServerError">
+<summary>
+ A generic error message, given when an unexpected condition was encountered and no more specific message is suitable.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.UnavailableForLegalReasons">
+<summary>
+ A server operator has received a legal demand to deny access to a resource or to a set of resources that includes the requested resource.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.RequestHeaderFieldsTooLarge">
+<summary>
+ The server is unwilling to process the request because either an individual header field, or all the header fields collectively, are too large.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.TooManyRequests">
+<summary>
+ The user has sent too many requests in a given amount of time.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.PreconditionRequired">
+<summary>
+ The origin server requires the request to be conditional.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.UpgradeRequired">
+<summary>
+ The client should switch to a different protocol such as TLS/1.0, given in the Upgrade header field.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.FailedDependency">
+<summary>
+ The request failed because it depended on another request and that request failed (e.g., a PROPPATCH).
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.Locked">
+<summary>
+ The resource that is being accessed is locked.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.UnprocessableEntity">
+<summary>
+ The request was well-formed but was unable to be followed due to semantic errors.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.MisdirectedRequest">
+<summary>
+ The request was directed at a server that is not able to produce a response.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.ExpectationFailed">
+<summary>
+ The server cannot meet the requirements of the Expect request-header field.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.RangeNotSatisfiable">
+<summary>
+ The client has asked for a portion of the file (byte serving), but the server cannot supply that portion.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.UnsupportedMediaType">
+<summary>
+ The request entity has a media type which the server or resource does not support.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.URITooLong">
+<summary>
+ The URI provided was too long for the server to process.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.PayloadTooLarge">
+<summary>
+ The request is larger than the server is willing or able to process.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.PreconditionFailed">
+<summary>
+ The server does not meet one of the preconditions that the requester put on the request.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.LengthRequired">
+<summary>
+ The request did not specify the length of its content, which is required by the requested resource.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.Gone">
+<summary>
+ Indicates that the resource requested is no longer available and will not be available again.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.Conflict">
+<summary>
+ Indicates that the request could not be processed because of conflict in the request, such as an edit conflict between multiple simultaneous updates.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.RequestTimeout">
+<summary>
+ The server timed out waiting for the request.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.ProxyAuthenticationRequired">
+<summary>
+ The client must first authenticate itself with the proxy.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.NotAcceptable">
+<summary>
+ The requested resource is capable of generating only content not acceptable according to the Accept headers sent in the request.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.MethodNotAllowed">
+<summary>
+ A request method is not supported for the requested resource.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.NotFound">
+<summary>
+ The requested resource could not be found but may be available in the future. Subsequent requests by the client are permissible.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.Forbidden">
+<summary>
+ The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource, or may need an account of some sort.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.PaymentRequired">
+<summary>
+ Reserved for future use.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.Unauthorized">
+<summary>
+ Similar to 403 Forbidden, but specifically for use when authentication is required and has failed or has not yet been provided.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.BadRequest">
+<summary>
+ The server cannot or will not process the request due to an apparent client error.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.PermanentRedirect">
+<summary>
+ The request and all future requests should be repeated using another URI.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.TemporaryRedirect">
+<summary>
+ In this case, the request should be repeated with another URI; however, future requests should still use the original URI.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.SwitchProxy">
+<summary>
+ No longer used. Originally meant &quot;Subsequent requests should use the specified proxy.&quot;
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.UseProxy">
+<summary>
+ The requested resource is available only through a proxy, the address for which is provided in the response.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.NotModified">
+<summary>
+ Indicates that the resource has not been modified since the version specified by the request headers If-Modified-Since or If-None-Match.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.SeeOther">
+<summary>
+ The response to the request can be found under another URI using the GET method.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.Found">
+<summary>
+ Tells the client to look at (browse to) another url. 302 has been superseded by 303 and 307.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.MovedPermanently">
+<summary>
+ This and all future requests should be directed to the given URI.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.MultipleChoices">
+<summary>
+ Indicates multiple options for the resource from which the client may choose (via agent-driven content negotiation).
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.IMUsed">
+<summary>
+ The server has fulfilled a request for the resource, and the response is a representation of the result of one or more instance-manipulations applied to the current instance.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.AlreadyReported">
+<summary>
+ The members of a DAV binding have already been enumerated in a preceding part of the (multistatus) response, and are not being included again.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.MultiStatus">
+<summary>
+ The message body that follows is by default an XML message and can contain a number of separate response codes, depending on how many sub-requests were made.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.PartialContent">
+<summary>
+ The server is delivering only part of the resource (byte serving) due to a range header sent by the client.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.ResetContent">
+<summary>
+ The server successfully processed the request, but is not returning any content.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.NoContent">
+<summary>
+ The server successfully processed the request and is not returning any content.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.NonAuthoritativeInformation">
+<summary>
+ The server is a transforming proxy (e.g. a Web accelerator) that received a 200 OK from its origin, but is returning a modified version of the origin&apos;s response.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.Accepted">
+<summary>
+ The request has been accepted for processing, but the processing has not been completed.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.Created">
+<summary>
+ The request has been fulfilled, resulting in the creation of a new resource.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.OK">
+<summary>
+ Standard response for successful HTTP requests.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.EarlyHints">
+<summary>
+ Used to return some response headers before final HTTP message.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.Processing">
+<summary>
+ This code indicates that the server has received and is processing the request, but no response is available yet.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.SwitchingProtocols">
+<summary>
+ The requester has asked the server to switch protocols and the server has agreed to do so.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpStatusCodes.Continue">
+<summary>
+ The server has received the request headers and the client should proceed to send the request body.
+</summary>
+</member>
+<member name="T:FSharp.Data.HttpStatusCodes">
+<summary>
+ Status codes that can be received in an HTTP response
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.WWWAuthenticate">
+<summary>
+ Indicates the authentication scheme that should be used to access the requested entity.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.Warning">
+<summary>
+ A general warning about possible problems with the entity body.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.Via">
+<summary>
+ Informs the client of proxies through which the response was sent.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.Vary">
+<summary>
+ Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.TransferEncoding">
+<summary>
+ The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.Trailer">
+<summary>
+ The Trailer general field value indicates that the given set of header fields is present in the trailer of a message encoded with chunked transfer-coding.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.StrictTransportSecurity">
+<summary>
+ A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.Status">
+<summary>
+ The HTTP status of the response
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.SetCookie">
+<summary>
+ An HTTP cookie
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.Server">
+<summary>
+ A name for the server
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.RetryAfter">
+<summary>
+ If an entity is temporarily unavailable, this instructs the client to try again later. Value could be a specified period of time (in seconds) or a HTTP-date.[28]
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.Refresh">
+<summary>
+ Used in redirection, or when a new resource has been created. This refresh redirects after 5 seconds.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.ProxyAuthenticate">
+<summary>
+ Request authentication to access the proxy.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.Pragma">
+<summary>
+ Implementation-specific headers that may have various effects anywhere along the request-response chain.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.P3P">
+<summary>
+ This header is supposed to set P3P policy
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.Location">
+<summary>
+ Used in redirection, or when a new resource has been created.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.Link">
+<summary>
+ Used to express a typed relationship with another resource, where the relation type is defined by RFC 5988
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.LastModified">
+<summary>
+ The last modified date for the requested object
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.Expires">
+<summary>
+ Gives the date/time after which the response is considered stale
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.ETag">
+<summary>
+ An identifier for a specific version of a resource, often a message digest
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.Date">
+<summary>
+ The date and time that the message was sent (in &quot;HTTP-date&quot; format as defined by RFC 2616)
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.ContentType">
+<summary>
+ The MIME type of this content
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.ContentRange">
+<summary>
+ Where in a full body message this partial message belongs
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.ContentDisposition">
+<summary>
+ An opportunity to raise a &quot;File Download&quot; dialogue box for a known MIME type with binary format or suggest a filename for dynamic content. Quotes are necessary with special characters.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.ContentMD5">
+<summary>
+ A Base64-encoded binary MD5 sum of the content of the response
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.ContentLocation">
+<summary>
+ An alternate location for the returned data
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.ContentLength">
+<summary>
+ The length of the response body in octets (8-bit bytes)
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.ContentLanguage">
+<summary>
+ The language the content is in
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.ContentEncoding">
+<summary>
+ The type of encoding used on the data. See HTTP compression.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.Connection">
+<summary>
+ Options that are desired for the connection
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.CacheControl">
+<summary>
+ Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.Allow">
+<summary>
+ Valid actions for a specified resource. To be used for a 405 Method not allowed
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.Age">
+<summary>
+ The age the object has been in a proxy cache in seconds
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.AcceptRanges">
+<summary>
+ What partial content range types this server supports
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpResponseHeaders.AccessControlAllowOrigin">
+<summary>
+ Specifying which web sites can participate in cross-origin resource sharing
+</summary>
+</member>
+<member name="T:FSharp.Data.HttpResponseHeaders">
+<summary>
+ Headers that can be received in an HTTP response
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.XHTTPMethodOverride(System.String)">
+<summary>
+ Override HTTP method.
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.Warning(System.String)">
+<summary>
+ A general warning about possible problems with the entity body
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.Via(System.String)">
+<summary>
+ Informs the server of proxies through which the request was sent
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.UserAgent(System.String)">
+<summary>
+ The user agent string of the user agent
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.Upgrade(System.String)">
+<summary>
+ Specifies additional communications protocols that the client supports.
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.Translate(System.String)">
+<summary>
+ Microsoft extension to the HTTP specification used in conjunction with WebDAV functionality.
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.TransferEncoding(System.String)">
+<summary>
+ The TransferEncoding header indicates the form of encoding used to safely transfer the entity to the user.  The valid directives are one of: chunked, compress, deflate, gzip, or identity.
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.Trailer(System.String)">
+<summary>
+ The Trailer general field value indicates that the given set of header fields is present in the trailer of a message encoded with chunked transfer-coding
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.TE(System.String)">
+<summary>
+ The transfer encodings the user agent is willing to accept: the same values as for the response header
+ Transfer-Encoding can be used, plus the &quot;trailers&quot; value (related to the &quot;chunked&quot; transfer method) to
+ notify the server it expects to receive additional headers (the trailers) after the last, zero-sized, chunk.
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.Referer(System.String)">
+<summary>
+ This is the address of the previous web page from which a link to the currently requested page was followed. (The word &quot;referrer&quot; is misspelled in the RFC as well as in most implementations.)
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.Range(System.Int64,System.Int64)">
+<summary>
+ Request only part of an entity. Bytes are numbered from 0
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.ProxyAuthorization(System.String)">
+<summary>
+ Authorization credentials for connecting to a proxy.
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.Prefer(System.String)">
+<summary>
+ Optional instructions to the server to control request processing. See RFC https://tools.ietf.org/html/rfc7240 for more details
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.Pragma(System.String)">
+<summary>
+ Implementation-specific headers that may have various effects anywhere along the request-response chain.
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.Origin(System.String)">
+<summary>
+ Initiates a request for cross-origin resource sharing (asks server for an &apos;Access-Control-Allow-Origin&apos; response header)
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.MaxForwards(System.Int32)">
+<summary>
+ Limit the number of times the message can be forwarded through proxies or gateways
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.LastModified(System.DateTime)">
+<summary>
+ Specifies the date and time at which the accompanying body data was last modified
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.KeepAlive(System.String)">
+<summary>
+ Specifies a parameter used into order to maintain a persistent connection
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.IfUnmodifiedSince(System.DateTime)">
+<summary>
+ Only send the response if the entity has not been modified since a specific time
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.IfRange(System.String)">
+<summary>
+ If the entity is unchanged, send me the part(s) that I am missing; otherwise, send me the entire new entity
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.IfNoneMatch(System.String)">
+<summary>
+ Allows a 304 Not Modified to be returned if content is unchanged
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.IfModifiedSince(System.DateTime)">
+<summary>
+ Allows a 304 Not Modified to be returned if content is unchanged
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.IfMatch(System.String)">
+<summary>
+ Only perform the action if the client supplied entity matches the same entity on the server.
+ This is mainly for methods like PUT to only update a resource if it has not been modified since the user last updated it. If-Match: &quot;737060cd8c284d8af7ad3082f209582d&quot; Permanent
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.Host(System.String)">
+<summary>
+ The domain name of the server (for virtual hosting), and the TCP port number on which the server is listening.
+ The port number may be omitted if the port is the standard port for the service requested.
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.From(System.String)">
+<summary>
+ The email address of the user making the request
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.Expires(System.DateTime)">
+<summary>
+ Gives the date/time after which the response is considered stale
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.Expect(System.String)">
+<summary>
+ Indicates that particular server behaviors are required by the client
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.Date(System.DateTime)">
+<summary>
+ The date and time that the message was sent
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.ContentTypeWithEncoding(System.String,System.Text.Encoding)">
+<summary>
+ The MIME type of the body of the request (used with POST and PUT requests) with an explicit encoding
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.ContentType(System.String)">
+<summary>
+ The MIME type of the body of the request (used with POST and PUT requests)
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.ContentRange(System.String)">
+<summary>
+ Where in a full body message this partial message belongs
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.ContentMD5(System.String)">
+<summary>
+ A Base64-encoded binary MD5 sum of the content of the request body
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.ContentLocation(System.String)">
+<summary>
+ An alternate location for the returned data
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.ContentLanguage(System.String)">
+<summary>
+ The language the content is in
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.ContentEncoding(System.String)">
+<summary>
+ The type of encoding used on the data
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.ContentDisposition(System.String,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String})">
+<summary>
+ Describes the placement of the content. Valid dispositions are: inline, attachment, form-data
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.Connection(System.String)">
+<summary>
+ What type of connection the user-agent would prefer
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.CacheControl(System.String)">
+<summary>
+ Used to specify directives that MUST be obeyed by all caching mechanisms along the request/response chain
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.BasicAuth(System.String,System.String)">
+<summary>
+ Authentication header using Basic Auth encoding
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.Authorization(System.String)">
+<summary>
+ Authentication credentials for HTTP authentication
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.Allow(System.String)">
+<summary>
+ The Allow header, which specifies the set of HTTP methods supported.
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.AcceptLanguage(System.String)">
+<summary>
+ List of acceptable human languages for response
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.AcceptEncoding(System.String)">
+<summary>
+ List of acceptable encodings. See HTTP compression.
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.AcceptDatetime(System.DateTime)">
+<summary>
+ Acceptable version in time
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.AcceptCharset(System.String)">
+<summary>
+ Character sets that are acceptable
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.Accept(System.String)">
+<summary>
+ Content-Types that are acceptable for the response
+</summary>
+</member>
+<member name="T:FSharp.Data.HttpRequestHeaders">
+<summary>
+ Headers that can be sent in an HTTP request
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpMethod.Patch">
+<summary>
+ Requests that the origin server applies partial modifications contained in the entity enclosed in the request to the resource identified by the request URI
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpMethod.Unlock">
+<summary>
+ Removes the lock identified by the lock token from the request URI, and all other resources included in the lock
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpMethod.Lock">
+<summary>
+ Used to take out a lock of any access type on the resource identified by the request URI.
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpMethod.Move">
+<summary>
+ Logical equivalent of a copy, followed by consistency maintenance processing, followed by a delete of the source where all three actions are performed atomically
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpMethod.Copy">
+<summary>
+ Creates a duplicate of the source resource, identified by the Request-URI, in the destination resource, identified by the URI in the Destination header
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpMethod.MkCol">
+<summary>
+ Creates a new collection resource at the location specified by the Request URI
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpMethod.PropPatch">
+<summary>
+ Processes instructions specified in the request body to set and/or remove properties defined on the resource identified by the request URI
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpMethod.PropFind">
+<summary>
+ Retrieves properties defined on the resource identified by the request URI
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpMethod.Connect">
+<summary>
+ Reserved for use with a proxy that can dynamically switch to being a tunnel
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpMethod.Trace">
+<summary>
+ Used to invoke a remote, application-layer loop- back of the request message
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpMethod.Delete">
+<summary>
+ Requests that the origin server deletes the resource identified by the Request-URI
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpMethod.Put">
+<summary>
+ Requests that the enclosed entity be stored under the supplied Request-URI
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpMethod.Post">
+<summary>
+ Requests that the server accepts the entity enclosed in the request as a
+ new subordinate of the resource identified by the Request-URI in the Request-Line
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpMethod.Head">
+<summary>
+ Identical to GET except that the server MUST NOT return a message-body in the response
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpMethod.Get">
+<summary>
+ Retrieve whatever information (in the form of an entity) is identified by the URI
+</summary>
+</member>
+<member name="P:FSharp.Data.HttpMethod.Options">
+<summary>
+ Request information about the communication options available on the request/response chain identified by the URI
+</summary>
+</member>
+<member name="T:FSharp.Data.HttpMethod">
+<summary>
+ The method to use in an HTTP request
+</summary>
+</member>
+</members>
+</doc>

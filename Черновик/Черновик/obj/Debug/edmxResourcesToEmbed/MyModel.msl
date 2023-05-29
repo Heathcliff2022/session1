@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище ЧерновикModelContainer" CdmEntityContainer="ЧерновикEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ЧерновикModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Единицы_измерения">
+      <EntityTypeMapping TypeName="ЧерновикModel.Единицы_измерения">
+        <MappingFragment StoreEntitySet="Единицы измерения">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Наименование" ColumnName="Наименование" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Материал">
+      <EntityTypeMapping TypeName="ЧерновикModel.Материал">
+        <MappingFragment StoreEntitySet="Материал">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Наименование" ColumnName="Наименование" />
+          <ScalarProperty Name="Ед_измерения" ColumnName="Ед.измерения" />
+          <ScalarProperty Name="Изображение" ColumnName="Изображение" />
+          <ScalarProperty Name="Цена" ColumnName="Цена" />
+          <ScalarProperty Name="Кол_во_в_упаковке" ColumnName="Кол-во в упаковке" />
+          <ScalarProperty Name="Минимальное_кол_во" ColumnName="Минимальное кол-во" />
+          <ScalarProperty Name="Тип" ColumnName="Тип" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Материалы_поставщиков">
+      <EntityTypeMapping TypeName="ЧерновикModel.Материалы_поставщиков">
+        <MappingFragment StoreEntitySet="Материалы поставщиков">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Материал" ColumnName="Материал" />
+          <ScalarProperty Name="Потавщик" ColumnName="Потавщик" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Поставщики">
+      <EntityTypeMapping TypeName="ЧерновикModel.Поставщики">
+        <MappingFragment StoreEntitySet="Поставщики">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Наименование" ColumnName="Наименование" />
+          <ScalarProperty Name="Тип" ColumnName="Тип" />
+          <ScalarProperty Name="ИНН" ColumnName="ИНН" />
+          <ScalarProperty Name="Рейтинг" ColumnName="Рейтинг" />
+          <ScalarProperty Name="Дата_начала_работы" ColumnName="Дата начала работы" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Тип_материала">
+      <EntityTypeMapping TypeName="ЧерновикModel.Тип_материала">
+        <MappingFragment StoreEntitySet="Тип_материала">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Наименование" ColumnName="Наименование" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Тип_поставщиков">
+      <EntityTypeMapping TypeName="ЧерновикModel.Тип_поставщиков">
+        <MappingFragment StoreEntitySet="Тип_поставщиков">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Наименование" ColumnName="Наименование" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

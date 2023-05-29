@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ЧерновикModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Единицы_измерения">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Наименование" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Материал" Relationship="Self.FK_Материал_Единицы_измерения1" FromRole="Единицы_измерения" ToRole="Материал" />
+  </EntityType>
+  <EntityType Name="Материал">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Наименование" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ед_измерения" Type="Int32" Nullable="false" />
+    <Property Name="Изображение" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Цена" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Кол_во_в_упаковке" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Минимальное_кол_во" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Тип" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Единицы_измерения" Relationship="Self.FK_Материал_Единицы_измерения1" FromRole="Материал" ToRole="Единицы_измерения" />
+    <NavigationProperty Name="Тип_материала" Relationship="Self.FK_Материал_Тип_материала" FromRole="Материал" ToRole="Тип_материала" />
+    <NavigationProperty Name="Материалы_поставщиков" Relationship="Self.FK_Материалы_поставщиков_Материал1" FromRole="Материал" ToRole="Материалы_поставщиков" />
+  </EntityType>
+  <EntityType Name="Материалы_поставщиков">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Материал" Type="Int32" Nullable="false" />
+    <Property Name="Потавщик" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Материал1" Relationship="Self.FK_Материалы_поставщиков_Материал1" FromRole="Материалы_поставщиков" ToRole="Материал" />
+    <NavigationProperty Name="Поставщики" Relationship="Self.FK_Материалы_поставщиков_Поставщики1" FromRole="Материалы_поставщиков" ToRole="Поставщики" />
+  </EntityType>
+  <EntityType Name="Поставщики">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Наименование" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Тип" Type="Int32" Nullable="false" />
+    <Property Name="ИНН" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Рейтинг" Type="Int32" Nullable="false" />
+    <Property Name="Дата_начала_работы" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Материалы_поставщиков" Relationship="Self.FK_Материалы_поставщиков_Поставщики1" FromRole="Поставщики" ToRole="Материалы_поставщиков" />
+    <NavigationProperty Name="Тип_поставщиков" Relationship="Self.FK_Поставщики_Тип_поставщиков" FromRole="Поставщики" ToRole="Тип_поставщиков" />
+  </EntityType>
+  <EntityType Name="Тип_материала">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Наименование" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Материал" Relationship="Self.FK_Материал_Тип_материала" FromRole="Тип_материала" ToRole="Материал" />
+  </EntityType>
+  <EntityType Name="Тип_поставщиков">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Наименование" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Поставщики" Relationship="Self.FK_Поставщики_Тип_поставщиков" FromRole="Тип_поставщиков" ToRole="Поставщики" />
+  </EntityType>
+  <Association Name="FK_Материал_Единицы_измерения1">
+    <End Role="Единицы_измерения" Type="Self.Единицы_измерения" Multiplicity="1" />
+    <End Role="Материал" Type="Self.Материал" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Единицы_измерения">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Материал">
+        <PropertyRef Name="Ед_измерения" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Материал_Тип_материала">
+    <End Role="Тип_материала" Type="Self.Тип_материала" Multiplicity="1" />
+    <End Role="Материал" Type="Self.Материал" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Тип_материала">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Материал">
+        <PropertyRef Name="Тип" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Материалы_поставщиков_Материал1">
+    <End Role="Материал" Type="Self.Материал" Multiplicity="1" />
+    <End Role="Материалы_поставщиков" Type="Self.Материалы_поставщиков" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Материал">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Материалы_поставщиков">
+        <PropertyRef Name="Материал" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Материалы_поставщиков_Поставщики1">
+    <End Role="Поставщики" Type="Self.Поставщики" Multiplicity="1" />
+    <End Role="Материалы_поставщиков" Type="Self.Материалы_поставщиков" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Поставщики">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Материалы_поставщиков">
+        <PropertyRef Name="Потавщик" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Поставщики_Тип_поставщиков">
+    <End Role="Тип_поставщиков" Type="Self.Тип_поставщиков" Multiplicity="1" />
+    <End Role="Поставщики" Type="Self.Поставщики" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Тип_поставщиков">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Поставщики">
+        <PropertyRef Name="Тип" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ЧерновикEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Единицы_измерения" EntityType="Self.Единицы_измерения" />
+    <EntitySet Name="Материал" EntityType="Self.Материал" />
+    <EntitySet Name="Материалы_поставщиков" EntityType="Self.Материалы_поставщиков" />
+    <EntitySet Name="Поставщики" EntityType="Self.Поставщики" />
+    <EntitySet Name="Тип_материала" EntityType="Self.Тип_материала" />
+    <EntitySet Name="Тип_поставщиков" EntityType="Self.Тип_поставщиков" />
+    <AssociationSet Name="FK_Материал_Единицы_измерения1" Association="Self.FK_Материал_Единицы_измерения1">
+      <End Role="Единицы_измерения" EntitySet="Единицы_измерения" />
+      <End Role="Материал" EntitySet="Материал" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Материал_Тип_материала" Association="Self.FK_Материал_Тип_материала">
+      <End Role="Тип_материала" EntitySet="Тип_материала" />
+      <End Role="Материал" EntitySet="Материал" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Материалы_поставщиков_Материал1" Association="Self.FK_Материалы_поставщиков_Материал1">
+      <End Role="Материал" EntitySet="Материал" />
+      <End Role="Материалы_поставщиков" EntitySet="Материалы_поставщиков" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Материалы_поставщиков_Поставщики1" Association="Self.FK_Материалы_поставщиков_Поставщики1">
+      <End Role="Поставщики" EntitySet="Поставщики" />
+      <End Role="Материалы_поставщиков" EntitySet="Материалы_поставщиков" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Поставщики_Тип_поставщиков" Association="Self.FK_Поставщики_Тип_поставщиков">
+      <End Role="Тип_поставщиков" EntitySet="Тип_поставщиков" />
+      <End Role="Поставщики" EntitySet="Поставщики" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

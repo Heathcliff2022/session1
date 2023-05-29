@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>FSharp.Data.Json.Core</name></assembly>
+<members>
+<member name="M:ProviderImplementation.JsonInference.inferType(FSharp.Data.Runtime.StructuralInference.IUnitsOfMeasureProvider,FSharp.Data.Runtime.StructuralInference.InferenceMode',System.Globalization.CultureInfo,System.String,FSharp.Data.JsonValue)">
+<summary>
+ Infer type of a JSON value - this is a simple function because most of the
+ functionality is handled in `StructureInference` (most notably, by
+ `inferCollectionType` and various functions to find common subtype), so
+ here we just need to infer types of primitive JSON values.
+</summary>
+</member>
+<member name="P:FSharp.Data.JsonValue._Print">
+ <exclude />
+</member>
+<member name="M:FSharp.Data.JsonValue.WriteTo(System.IO.TextWriter,FSharp.Data.JsonSaveOptions)">
+<summary>
+ Serializes the JsonValue to the specified System.IO.TextWriter.
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonValue.TryParse(System.String)">
+<summary>
+ Attempts to parse the specified JSON string
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonValue.RequestAsync(System.String,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.String}}})">
+<summary>
+ Sends the JSON to the specified URL asynchronously. Defaults to a POST request.
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonValue.Request(System.String,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.String}}})">
+<summary>
+ Sends the JSON to the specified URL synchronously. Defaults to a POST request.
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonValue.ParseMultiple(System.String)">
+<summary>
+ Parses the specified string into multiple JSON values
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonValue.Parse(System.String)">
+<summary>
+ Parses the specified JSON string
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonValue.Load(System.String,Microsoft.FSharp.Core.FSharpOption{System.Text.Encoding})">
+<summary>
+ Loads JSON from the specified uri
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonValue.Load(System.IO.TextReader)">
+<summary>
+ Loads JSON from the specified reader
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonValue.Load(System.IO.Stream)">
+<summary>
+ Loads JSON from the specified stream
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonValue.AsyncLoad(System.String,Microsoft.FSharp.Core.FSharpOption{System.Text.Encoding})">
+<summary>
+ Loads JSON from the specified uri asynchronously
+</summary>
+</member>
+<member name="T:FSharp.Data.JsonValue">
+<summary>
+ Represents a JSON value. Large numbers that do not fit in the
+ Decimal type are represented using the Float case, while
+ smaller numbers are represented as decimals to avoid precision loss.
+</summary>
+</member>
+<member name="F:FSharp.Data.JsonSaveOptions.CompactSpaceAfterComma">
+<summary>
+ Print the JsonValue in one line in a compact way,
+ but place a single space after every comma
+ https://github.com/fsprojects/FSharp.Data/issues/1482
+</summary>
+</member>
+<member name="F:FSharp.Data.JsonSaveOptions.DisableFormatting">
+<summary>
+ Print the JsonValue in one line in a compact way
+</summary>
+</member>
+<member name="F:FSharp.Data.JsonSaveOptions.None">
+<summary>
+ Format (indent) the JsonValue
+</summary>
+</member>
+<member name="T:FSharp.Data.JsonSaveOptions">
+<summary>
+ Specifies the formatting behaviour of JSON values
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.TryGetProperty(FSharp.Data.JsonValue,System.String)">
+<summary>
+ Try to get a property of a JSON value.
+ Returns None if the value is not an object or if the property is not present.
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.Properties(FSharp.Data.JsonValue)">
+<summary>
+ Get a sequence of key-value pairs representing the properties of an object
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.Item(FSharp.Data.JsonValue,System.Int32)">
+<summary>
+ Try to get the value at the specified index, if the value is a JSON array.
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.Item(FSharp.Data.JsonValue,System.String)">
+<summary>
+ Assuming the value is an object, get value with the specified name
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.InnerText(FSharp.Data.JsonValue)">
+<summary>
+ Get inner text of an element
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.GetProperty(FSharp.Data.JsonValue,System.String)">
+<summary>
+ Get property of a JSON object. Fails if the value is not an object
+ or if the property is not present
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.GetEnumerator(FSharp.Data.JsonValue)">
+<summary>
+ Get all the elements of a JSON value (assuming that the value is an array)
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.AsTimeSpan(FSharp.Data.JsonValue,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Get the timespan value of an element (assuming that the value is a string
+ containing well-formed time span)
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.AsString(FSharp.Data.JsonValue,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Get the string value of an element (assuming that the value is a scalar)
+ Returns the empty string for JsonValue.Null
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.AsInteger64(FSharp.Data.JsonValue,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Get a number as a 64-bit integer (assuming that the value fits in 64-bit integer)
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.AsInteger(FSharp.Data.JsonValue,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Get a number as an integer (assuming that the value fits in integer)
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.AsGuid(FSharp.Data.JsonValue)">
+<summary>
+ Get the guid value of an element (assuming that the value is a guid)
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.AsFloat(FSharp.Data.JsonValue,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo},Microsoft.FSharp.Core.FSharpOption{System.String[]})">
+<summary>
+ Get a number as a float (assuming that the value is convertible to a float)
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.AsDecimal(FSharp.Data.JsonValue,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Get a number as a decimal (assuming that the value fits in decimal)
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.AsDateTimeOffset(FSharp.Data.JsonValue,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Get the datetime offset value of an element (assuming that the value is a string
+ containing well-formed ISO date time with offset or MSFT JSON datetime with offset)
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.AsDateTime(FSharp.Data.JsonValue,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<summary>
+ Get the datetime value of an element (assuming that the value is a string
+ containing well-formed ISO date or MSFT JSON date)
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.AsBoolean(FSharp.Data.JsonValue)">
+<summary>
+ Get the boolean value of an element (assuming that the value is a boolean)
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonExtensions.AsArray(FSharp.Data.JsonValue)">
+<summary>
+ Get all the elements of a JSON value.
+ Returns an empty array if the value is not a JSON array.
+</summary>
+</member>
+<member name="T:FSharp.Data.JsonExtensions">
+<summary>
+ Extension methods with operations on JSON values
+</summary>
+</member>
+<member name="P:FSharp.Data.JsonValueModule.Object">
+<summary>
+ Constructor to create a `JsonValue.Record of (string * JsonValue)[]` as a `JsonValue.Object of Map&lt;string, JsonValue&gt;` for
+ backwards compatibility reaons
+</summary>
+</member>
+<member name="M:FSharp.Data.JsonValueModule.|Object|_|(FSharp.Data.JsonValue)">
+<summary>
+ Active Pattern to view a `JsonValue.Record of (string * JsonValue)[]` as a `JsonValue.Object of Map&lt;string, JsonValue&gt;` for
+ backwards compatibility reaons
+</summary>
+</member>
+<member name="T:FSharp.Data.JsonValueModule">
+ <exclude />
+</member>
+<member name="M:FSharp.Data.JsonExtensionsModule.op_Dynamic(FSharp.Data.JsonValue,System.String)">
+<summary>
+ Get a property of a JSON object
+</summary>
+</member>
+<member name="T:FSharp.Data.JsonExtensionsModule">
+<summary>
+ Provides the dynamic operator for getting a property of a JSON object
+</summary>
+</member>
+<member name="T:FSharp.Data.Runtime.JsonConversions">
+<summary>
+ Conversions from JsonValue to string/int/int64/decimal/float/boolean/datetime/datetimeoffset/timespan/guid options
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.JsonRuntime.TryGetValueByTypeTag``1(FSharp.Data.Runtime.BaseTypes.IJsonDocument,System.String,System.String,System.Func{FSharp.Data.Runtime.BaseTypes.IJsonDocument,``0})">
+<summary>
+ Returns a single or no value by tag type
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.JsonRuntime.TryGetValueByKeyFromInferedDictionary``2(FSharp.Data.Runtime.BaseTypes.IJsonDocument,System.Func{FSharp.Data.Runtime.BaseTypes.IJsonDocument,``0},System.Func{FSharp.Data.Runtime.BaseTypes.IJsonDocument,``1},``0)">
+<summary>
+ Try get a value by the key from infered dictionary
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.JsonRuntime.TryGetPropertyUnpackedWithPath(FSharp.Data.Runtime.BaseTypes.IJsonDocument,System.String)">
+<summary>
+ Get optional json property and wrap it together with path
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.JsonRuntime.TryGetPropertyUnpacked(FSharp.Data.Runtime.BaseTypes.IJsonDocument,System.String)">
+<summary>
+ Get optional json property
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.JsonRuntime.TryGetPropertyPacked(FSharp.Data.Runtime.BaseTypes.IJsonDocument,System.String)">
+<summary>
+ Get optional json property wrapped in json document
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.JsonRuntime.TryGetArrayChildByTypeTag``1(FSharp.Data.Runtime.BaseTypes.IJsonDocument,System.String,System.String,System.Func{FSharp.Data.Runtime.BaseTypes.IJsonDocument,``0})">
+<summary>
+ Returns single or no value from an array matching the specified tag
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.JsonRuntime.InferedDictionaryContainsKey``1(FSharp.Data.Runtime.BaseTypes.IJsonDocument,System.Func{FSharp.Data.Runtime.BaseTypes.IJsonDocument,``0},``0)">
+<summary>
+ Get a value by the key from infered dictionary
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.JsonRuntime.GetValuesFromInferedDictionary``1(FSharp.Data.Runtime.BaseTypes.IJsonDocument,System.Func{FSharp.Data.Runtime.BaseTypes.IJsonDocument,``0})">
+<summary>
+ Get values from infered dictionary
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.JsonRuntime.GetValueByKeyFromInferedDictionary``2(FSharp.Data.Runtime.BaseTypes.IJsonDocument,System.Func{FSharp.Data.Runtime.BaseTypes.IJsonDocument,``0},System.Func{FSharp.Data.Runtime.BaseTypes.IJsonDocument,``1},``0)">
+<summary>
+ Get a value by the key from infered dictionary
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.JsonRuntime.GetRecordProperties(FSharp.Data.Runtime.BaseTypes.IJsonDocument)">
+<summary>
+ Get properties of the record
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.JsonRuntime.GetPropertyPackedOrNull(FSharp.Data.Runtime.BaseTypes.IJsonDocument,System.String)">
+<summary>
+ Get json property and wrap in json document, and return null if not found
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.JsonRuntime.GetPropertyPacked(FSharp.Data.Runtime.BaseTypes.IJsonDocument,System.String)">
+<summary>
+ Get json property and wrap in json document
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.JsonRuntime.GetNonOptionalValue``1(System.String,Microsoft.FSharp.Core.FSharpOption{``0},Microsoft.FSharp.Core.FSharpOption{FSharp.Data.JsonValue})">
+<summary>
+ Operation that extracts the value from an option and reports a meaningful error message when the value is not there
+ If the originalValue is a scalar, for missing strings we return &quot;&quot;, and for missing doubles we return NaN
+ For other types an error is thrown
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.JsonRuntime.GetKeysFromInferedDictionary``1(FSharp.Data.Runtime.BaseTypes.IJsonDocument,System.Func{FSharp.Data.Runtime.BaseTypes.IJsonDocument,``0})">
+<summary>
+ Get keys from infered dictionary
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.JsonRuntime.GetArrayChildrenByTypeTag``1(FSharp.Data.Runtime.BaseTypes.IJsonDocument,System.String,System.String,System.Func{FSharp.Data.Runtime.BaseTypes.IJsonDocument,``0})">
+<summary>
+ Returns all array values that match the specified tag
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.JsonRuntime.GetArrayChildByTypeTag(FSharp.Data.Runtime.BaseTypes.IJsonDocument,System.String,System.String)">
+<summary>
+ Returns a single array children that matches the specified tag
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.JsonRuntime.CreateValue(System.Object,System.String)">
+<summary>
+ Creates a scalar JsonValue and wraps it in a json document
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.JsonRuntime.CreateArray(System.Object[],System.String)">
+<summary>
+ Creates a scalar JsonValue.Array and wraps it in a json document
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.JsonRuntime.ConvertRecordToDictionary``2(FSharp.Data.Runtime.BaseTypes.IJsonDocument,System.Func{FSharp.Data.Runtime.BaseTypes.IJsonDocument,``0},System.Func{FSharp.Data.Runtime.BaseTypes.IJsonDocument,``1})">
+<summary>
+ Converts JSON record to dictionary
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.JsonRuntime.ConvertOptionalProperty``1(FSharp.Data.Runtime.BaseTypes.IJsonDocument,System.String,System.Func{FSharp.Data.Runtime.BaseTypes.IJsonDocument,``0})">
+<summary>
+ Get optional json property and convert to a specified type
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.JsonRuntime.ConvertArray``1(FSharp.Data.Runtime.BaseTypes.IJsonDocument,System.Func{FSharp.Data.Runtime.BaseTypes.IJsonDocument,``0})">
+<summary>
+ Converts JSON array to array of target types
+</summary>
+</member>
+<member name="T:FSharp.Data.Runtime.JsonRuntime">
+<summary>
+ Static helper methods called from the generated code for working with JSON
+</summary>
+</member>
+<member name="T:FSharp.Data.Runtime.JsonValueOptionAndPath">
+ <exclude />
+</member>
+<member name="P:FSharp.Data.Runtime.BaseTypes.JsonDocument.Path">
+ <exclude />
+</member>
+<member name="P:FSharp.Data.Runtime.BaseTypes.JsonDocument.Json">
+ <exclude />
+</member>
+<member name="P:FSharp.Data.Runtime.BaseTypes.JsonDocument.JsonValue">
+<summary>
+ The underlying JsonValue
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.BaseTypes.JsonDocument.ToString">
+ <exclude />
+</member>
+<member name="M:FSharp.Data.Runtime.BaseTypes.JsonDocument.CreateList(System.IO.TextReader)">
+ <exclude />
+</member>
+<member name="M:FSharp.Data.Runtime.BaseTypes.JsonDocument.Create(System.IO.TextReader)">
+ <exclude />
+</member>
+<member name="M:FSharp.Data.Runtime.BaseTypes.JsonDocument.Create(FSharp.Data.JsonValue,System.String)">
+ <exclude />
+</member>
+<member name="T:FSharp.Data.Runtime.BaseTypes.JsonDocument">
+ <summary>Underlying representation of types generated by JsonProvider</summary>
+ <namespacedoc>
+   <summary>Contains the runtime base types used by generated row types for FSharp.Data type providers.</summary>
+ </namespacedoc>
+</member>
+<member name="T:FSharp.Data.Runtime.BaseTypes.IJsonDocument">
+ <exclude />
+</member>
+</members>
+</doc>

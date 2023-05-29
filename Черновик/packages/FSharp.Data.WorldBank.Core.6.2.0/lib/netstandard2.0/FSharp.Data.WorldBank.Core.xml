@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>FSharp.Data.WorldBank.Core</name></assembly>
+<members>
+<member name="T:FSharp.Data.Runtime.WorldBank.WorldBankData">
+ <exclude />
+</member>
+<member name="T:FSharp.Data.Runtime.WorldBank.IWorldBankData">
+ <exclude />
+</member>
+<member name="T:FSharp.Data.Runtime.WorldBank.TopicCollection`1">
+ <exclude />
+</member>
+<member name="T:FSharp.Data.Runtime.WorldBank.ITopicCollection">
+ <exclude />
+</member>
+<member name="P:FSharp.Data.Runtime.WorldBank.Topic.Name">
+<summary>
+ Get the name of the topic
+</summary>
+</member>
+<member name="P:FSharp.Data.Runtime.WorldBank.Topic.Description">
+<summary>
+ Get the description of the topic
+</summary>
+</member>
+<member name="P:FSharp.Data.Runtime.WorldBank.Topic.Code">
+<summary>
+ Get the WorldBank code of the topic
+</summary>
+</member>
+<member name="T:FSharp.Data.Runtime.WorldBank.Topic">
+<summary>
+ Metadata for a Topic
+</summary>
+</member>
+<member name="T:FSharp.Data.Runtime.WorldBank.ITopic">
+ <exclude />
+</member>
+<member name="T:FSharp.Data.Runtime.WorldBank.RegionCollection`1">
+ <exclude />
+</member>
+<member name="T:FSharp.Data.Runtime.WorldBank.IRegionCollection">
+ <exclude />
+</member>
+<member name="P:FSharp.Data.Runtime.WorldBank.Region.RegionCode">
+<summary>
+ Get the WorldBank code for the region
+</summary>
+</member>
+<member name="P:FSharp.Data.Runtime.WorldBank.Region.Name">
+<summary>
+ Get the name of the region
+</summary>
+</member>
+<member name="T:FSharp.Data.Runtime.WorldBank.Region">
+<summary>
+ Metadata for a Region
+</summary>
+</member>
+<member name="T:FSharp.Data.Runtime.WorldBank.IRegion">
+ <exclude />
+</member>
+<member name="T:FSharp.Data.Runtime.WorldBank.CountryCollection`1">
+ <exclude />
+</member>
+<member name="T:FSharp.Data.Runtime.WorldBank.ICountryCollection">
+ <exclude />
+</member>
+<member name="P:FSharp.Data.Runtime.WorldBank.Country.Region">
+<summary>
+ Get the region of the country
+</summary>
+</member>
+<member name="P:FSharp.Data.Runtime.WorldBank.Country.Name">
+<summary>
+ Get the name of the country
+</summary>
+</member>
+<member name="P:FSharp.Data.Runtime.WorldBank.Country.Code">
+<summary>
+ Get the WorldBank code of the country
+</summary>
+</member>
+<member name="P:FSharp.Data.Runtime.WorldBank.Country.CapitalCity">
+<summary>
+ Get the capital city of the country
+</summary>
+</member>
+<member name="T:FSharp.Data.Runtime.WorldBank.Country">
+<summary>
+ Metadata for a Country
+</summary>
+</member>
+<member name="T:FSharp.Data.Runtime.WorldBank.ICountry">
+ <exclude />
+</member>
+<member name="T:FSharp.Data.Runtime.WorldBank.IndicatorsDescriptions">
+ <exclude />
+</member>
+<member name="T:FSharp.Data.Runtime.WorldBank.IIndicatorsDescriptions">
+ <exclude />
+</member>
+<member name="T:FSharp.Data.Runtime.WorldBank.Indicators">
+ <exclude />
+</member>
+<member name="T:FSharp.Data.Runtime.WorldBank.IIndicators">
+ <exclude />
+</member>
+<member name="P:FSharp.Data.Runtime.WorldBank.IndicatorDescription.Source">
+<summary>
+ Get the source of the indicator
+</summary>
+</member>
+<member name="P:FSharp.Data.Runtime.WorldBank.IndicatorDescription.Name">
+<summary>
+ Get the name of the indicator
+</summary>
+</member>
+<member name="P:FSharp.Data.Runtime.WorldBank.IndicatorDescription.IndicatorCode">
+<summary>
+ Get the code for the indicator
+</summary>
+</member>
+<member name="P:FSharp.Data.Runtime.WorldBank.IndicatorDescription.Description">
+<summary>
+ Get the description of the indicator
+</summary>
+</member>
+<member name="P:FSharp.Data.Runtime.WorldBank.IndicatorDescription.Code">
+<summary>
+ Get the code for the topic of the indicator
+</summary>
+</member>
+<member name="T:FSharp.Data.Runtime.WorldBank.IndicatorDescription">
+<summary>
+ Metadata for an Indicator
+</summary>
+</member>
+<member name="P:FSharp.Data.Runtime.WorldBank.Indicator.Years">
+<summary>
+ Get the years for which the indicator has values
+</summary>
+</member>
+<member name="P:FSharp.Data.Runtime.WorldBank.Indicator.Values">
+<summary>
+ Get the values for the indicator (without years)
+</summary>
+</member>
+<member name="P:FSharp.Data.Runtime.WorldBank.Indicator.Source">
+<summary>
+ Get the source of the indicator
+</summary>
+</member>
+<member name="P:FSharp.Data.Runtime.WorldBank.Indicator.Name">
+<summary>
+ Get the name of the indicator
+</summary>
+</member>
+<member name="P:FSharp.Data.Runtime.WorldBank.Indicator.Item(System.Int32)">
+<summary>
+ Get the indicator value for the given year. If there&apos;s no data for that year, NaN is returned
+</summary>
+</member>
+<member name="P:FSharp.Data.Runtime.WorldBank.Indicator.IndicatorCode">
+<summary>
+ Get the code for the indicator
+</summary>
+</member>
+<member name="P:FSharp.Data.Runtime.WorldBank.Indicator.Description">
+<summary>
+ Get the description of the indicator
+</summary>
+</member>
+<member name="P:FSharp.Data.Runtime.WorldBank.Indicator.Code">
+<summary>
+ Get the code for the country or region of the indicator
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.WorldBank.Indicator.TryGetValueAt(System.Int32)">
+<summary>
+ Get the indicator value for the given year, if present
+</summary>
+</member>
+<member name="T:FSharp.Data.Runtime.WorldBank.Indicator">
+ <summary>Indicator data</summary>
+ <namespacedoc>
+   <summary>Support types for the WorldBank type provider.</summary>
+ </namespacedoc>
+</member>
+<member name="F:FSharp.Data.Runtime.WorldBank.Implementation.ServiceConnection.topics">
+<summary>
+ At compile time, download the schema
+</summary>
+</member>
+<member name="M:FSharp.Data.Runtime.WorldBank.Implementation.ServiceConnection.GetDataAsync(System.String,System.String)">
+<summary>
+ At runtime, download the data
+</summary>
+</member>
+<member name="T:FSharp.Data.Runtime.WorldBank.Implementation">
+ <exclude />
+</member>
+</members>
+</doc>
